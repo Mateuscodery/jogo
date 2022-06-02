@@ -199,13 +199,13 @@ position:absolute;
  color:white;
  }
  #fundo-vire {
- z-index:3;
- 
+ z-index:2;
  position:absolute;
  width:100%;
  height:100vh;
- background:#1B62B4;
  background-image:url("bg.png");
+ background-repeat:no-repeat;
+ background-size:cover;
  }
  #beyIco{
  width:40%;
@@ -251,7 +251,6 @@ if(largura > altura){
 fundoVire.style.display="none";
 }else{fundoVire.style.display="block"}
 },0);
-var bd = document.querySelector("body")
 var telaEspera= document.getElementById("tela_de_espera");
 var telaStart= document.getElementById("tela_de_start");
 var continuar= document.getElementById("continuar");
@@ -279,7 +278,7 @@ audio.play();
 gift.addEventListener("click",function(){
 caixaDeDialogo.style.display="block";fundoPreto.style.display="block";
 audio.play();
-bd.requestFullscreen()
+document.documentElement.requestFullscreen()
 });
 
 
