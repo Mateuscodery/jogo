@@ -251,7 +251,7 @@ if(largura > altura){
 fundoVire.style.display="none";
 }else{fundoVire.style.display="block"}
 },0);
-
+var bd = document.querySelector("body")
 var telaEspera= document.getElementById("tela_de_espera");
 var telaStart= document.getElementById("tela_de_start");
 var continuar= document.getElementById("continuar");
@@ -279,7 +279,7 @@ audio.play();
 gift.addEventListener("click",function(){
 caixaDeDialogo.style.display="block";fundoPreto.style.display="block";
 audio.play();
-document.body.requestFullscreen()
+bd.requestFullscreen()
 });
 
 
