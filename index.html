@@ -238,7 +238,7 @@ position:absolute;
 <div id="tela_de_start" >
  <img src="beyblade-logo.png" id="logo2">
  <label id="contilabel" ><img src="button.png"  id="continuar" ><p id="textContinuar" >continuar</p></label>
- <label><img src="button.png"  id="novo_jogo" ><p id="textNovoJogo" >novo jogo</p></label>
+ <label id="novlabel" ><img src="button.png"  id="novo_jogo" ><p id="textNovoJogo" >novo jogo</p></label>
 </div>
 
 <script type="text/javascript">
@@ -256,6 +256,7 @@ var telaStart= document.getElementById("tela_de_start");
 var continuar= document.getElementById("continuar");
 var novoJogo= document.getElementById("novo_jogo");
 var contilabel= document.getElementById("contilabel");
+var novlabel= document.getElementById("novlabel");
 var txtclick= document.getElementById("span");
 var gift= document.getElementById("gift");
 var audio =new Audio();
@@ -269,6 +270,9 @@ audio.play();
 });
 
 contilabel.addEventListener("click",function(){
+audio.play();
+});
+novlabel.addEventListener("click",function(){
 audio.play();
 });
 novoJogo.addEventListener("click",function(){
