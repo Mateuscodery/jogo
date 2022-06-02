@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title></title>
+<style type="text/css">
+*{
+margin:0px;
+padding:0px;
+ }
+ body{
+ background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2QQf_AjunHBGvj57LK3vWMHJvWVBm28c4Fw&usqp=CAU");
+ background-image:url("bg.png");
+ background-repeat:no-repeat;
+ background-size:cover;
+ width:100%;
+ height:100vh;
+ }
+ 
+ /*caixa de dialogo*/
+ #fundo-preto{
+ z-index:1;
+ display:none;
+ position:absolute;
+ width:100%;
+ height:100%;
+ background:black;
+ opacity:70%;
+ }
+ #caixa-de-dialogo{
+ z-index:2;
+ display:none;
+ border:2px solid #1D2829;
+ opacity:100%;
+ background:#1B62B4;
+ padding:4px;
+ position:absolute;
+ border-radius:15px;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ }
+ #primeira-caixa {
+ padding:0px;
+ font-family:Courier new,monospace;
+ text-transform:uppercase;
+ font-size:13pt;
+ text-align:justify;
+ width:200px;
+ height:auto;
+ background:#9FA0A2;
+ border-radius:15px;
+ }
+ #segunda-caixa{
+ font-family:Courier new,monospace;
+ text-transform:uppercase;
+ font-size:15pt;
+ text-align:center;
+ display:flex;
+ flex-direction:arow;
+ width:100%;
+ height:50px;
+ background:#FF9D06;
+ margin-top:5px;
+ border-radius:15px;
+ }
+ #cancelar{
+ font-weight:bold;
+ color:white;
+ font-size:17pt;
+ width:120px;
+ height:40px;
+ text-align:center;
+ position:absolute;
+ padding-top:10px;
+ left:20px;
+ }
+ #ok{
+ font-weight:bold;
+ color:white;
+ font-size:17pt;
+ width:100px;
+ height:40px;
+ text-align:center;
+ position:absolute;
+ padding-top:10px;
+ right:-10px;
+ }
+ 
+ 
+#tela_de_espera{
+display:block;
+ width:100%;
+ height:100%;
+               }
+#logo{
+width:95%;
+height:100%;
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+      }
+#gift{
+width:5%;
+position:absolute;
+right:5px;
+top:5px;
+      }
+@keyframes animate{
+ 0%{
+ opacity: 0;
+ }
+ 50%{
+ opacity: 0.7;
+ }
+ 100%{
+ opacity: 0;
+ }
+ }
+
+ #span{
+ width:100%;
+ position:absolute;
+ bottom:5%;
+ left:0;
+ text-align:center;
+ font-size:30pt;
+ color:white;
+ opacity:50%;
+ animation: animate 
+ 2s linear infinite;
+             }
+ input{
+ outline-style:none;
+ width:100%;
+ height:30px;
+ font-size:20pt;
+ font-family:Courier new,monospace;
+ text-transform:uppercase;
+ }
+ 
+ /*tela de start*/
+#logo2{
+width:40%;
+position:absolute;
+ top:20%;
+ left:50%;
+ transform:translate(-50%,-50%);
+}
+ #continuar{
+ position:absolute;
+ top:55%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ padding:0;
+ border:none;
+ border-radius:50px;
+ background:none;
+ width:50%;
+ height:75px;
+ font-size:290%;
+ color:white;
+ }
+ #novo_jogo{
+ position:absolute;
+ top:80%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ padding:0;
+ border:none;
+ border-radius:50px;
+ background:none;
+ width:50%;
+ height:75px;
+ }
+ #tela_de_start {
+ display:none;
+ width:100%;
+ height:100vh;
+ }
+ p {
+ position:absolute;
+ }
+ #textContinuar {
+ position:absolute;
+ top:54%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ font-size:290%;
+ color:white;
+ }
+ #textNovoJogo{
+ position:absolute;
+ top:79%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ font-size:290%;
+ color:white;
+ }
+ #fundo-vire {
+ z-index:3;
+ 
+ position:absolute;
+ width:100%;
+ height:100vh;
+ background:#1B62B4;
+ background-image:url("bg.png");
+ }
+ #beyIco{
+ width:40%;
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ }
+</style>
+</head>
+<body>
+<!--fundo preto caixa de dialogo-->
+<div id="fundo-preto" ></div>
+
+<div id="fundo-vire" ><img src="bey-ico.png" id="beyIco" class="spinner rotate"  ></div>
+ 
+<!--caixa de dialogo de novo pet-->
+<div id="caixa-de-dialogo" >
+ <div id="primeira-caixa"><input type="number" placeholder="codigo" ></div>
+ <div id="segunda-caixa" ><p id="cancelar" >cancelar</p><p id="ok" >ok</p></div>
+</div>
+<!--tela de click/espera-->
+<img src="beyblade-gift.png" id="gift" > 
+<div id="tela_de_espera" ><!--container e engloba todos ate o fim-->
+ <img src="beyblade-logo.png" id="logo" > 
+ 
+ <span id="span">clique aqui</span>
+</div><!--fim-->
+
+<div id="tela_de_start" >
+ <img src="beyblade-logo.png" id="logo2">
+ <label id="contilabel" ><img src="button.png"  id="continuar" ><p id="textContinuar" >continuar</p></label>
+ <label><img src="button.png"  id="novo_jogo" ><p id="textNovoJogo" >novo jogo</p></label>
+</div>
+
+<script type="text/javascript">
+var fundoVire = document.getElementById("fundo-vire");
+
+setInterval(function(){
+var largura = window.screen.width;
+var altura = window.screen.height;
+if(largura > altura){
+fundoVire.style.display="none";
+}else{fundoVire.style.display="block"}
+},0);
+
+var telaEspera= document.getElementById("tela_de_espera");
+var telaStart= document.getElementById("tela_de_start");
+var continuar= document.getElementById("continuar");
+var novoJogo= document.getElementById("novo_jogo");
+var contilabel= document.getElementById("contilabel");
+var txtclick= document.getElementById("span");
+var gift= document.getElementById("gift");
+var audio =new Audio();
+audio.src="sondbg.mp3";
+
+
+span.addEventListener("click",function(){
+telaEspera.style.display="none";
+telaStart.style.display="block";
+audio.play();
+});
+
+contilabel.addEventListener("click",function(){
+audio.play();
+});
+novoJogo.addEventListener("click",function(){
+audio.play();
+});
+
+gift.addEventListener("click",function(){
+caixaDeDialogo.style.display="block";fundoPreto.style.display="block";
+audio.play();
+document.body.requestFullscreen()
+});
+
+
+//caixa de dialogo
+var fundoPreto = document.getElementById("fundo-preto");
+var caixaDeDialogo = document.getElementById("caixa-de-dialogo");
+var cancelar = document.getElementById("cancelar");
+var ok = document.getElementById("ok");
+
+ //botao de cancelar da caixa de dialogo
+cancelar.addEventListener("click",function(){
+audio.play();
+caixaDeDialogo.style.display="none";fundoPreto.style.display="none";
+                                            });
+//botao de ok da caixa de dialogo                                            
+ok.addEventListener("click",function(){
+audio.play();
+caixaDeDialogo.style.display="none";fundoPreto.style.display="none";
+});
+</script>
+</body>
+</html>
