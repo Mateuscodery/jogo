@@ -158,13 +158,13 @@ position:absolute;
  border-radius:50px;
  background:none;
  width:50%;
- height:75px;
+ height:25%;
  font-size:290%;
  color:white;
  }
  #novo_jogo{
  position:absolute;
- top:80%;
+ top:83%;
  left:50%;
  transform:translate(-50%,-50%);
  padding:0;
@@ -172,7 +172,7 @@ position:absolute;
  border-radius:50px;
  background:none;
  width:50%;
- height:75px;
+ height:25%;
  }
  #tela_de_start {
  display:none;
@@ -192,7 +192,7 @@ position:absolute;
  }
  #textNovoJogo{
  position:absolute;
- top:79%;
+ top:82%;
  left:50%;
  transform:translate(-50%,-50%);
  font-size:290%;
@@ -271,12 +271,13 @@ audio.play();
 
 contilabel.addEventListener("click",function(){
 audio.play();
+continuar.style.width="70%"
+setTimeout(function(){continuar.style.width="50%"},100)
 });
 novlabel.addEventListener("click",function(){
 audio.play();
-});
-novoJogo.addEventListener("click",function(){
-audio.play();
+novoJogo.style.width="70%"
+setTimeout(function(){novoJogo.style.width="50%"},100)
 });
 
 gift.addEventListener("click",function(){
